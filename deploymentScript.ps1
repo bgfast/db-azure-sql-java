@@ -28,14 +28,16 @@ git config http.postBuffer 52488000
 Write-Host "git commit -m 'Initial commit'"
 git commit -m "Initial commit"
 
-
+# are the git commands needed if we run the webapp deploy command?
+az login --identity
+az account set --subscription "$subscriptionId"
 Write-Host "az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path .\target\azure-sql-java-samples-1.war"
 az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path .\target\azure-sql-java-samples-1.war
 #az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path C:\code\db-azure-sql-java\target\azure-sql-java-samples-1.war
 
-Write-Host "git remote rm azwebapp "
-git remote rm azwebapp 
-Write-Host "git remote add azwebapp $ADOgitURI"
-git remote add azwebapp $ADOgitURI
-Write-Host "git push -v --force azwebapp master"
-git push -v --force azwebapp master
+#Write-Host "git remote rm azwebapp "
+#git remote rm azwebapp 
+#Write-Host "git remote add azwebapp $ADOgitURI"
+#git remote add azwebapp $ADOgitURI
+#Write-Host "git push -v --force azwebapp master"
+#git push -v --force azwebapp master
