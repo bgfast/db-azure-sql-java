@@ -29,7 +29,7 @@ Write-Host "git commit -m 'Initial commit'"
 git commit -m "Initial commit"
 
 # are the git commands needed if we run the webapp deploy command?
-az login --identity
+az login 
 az account set --subscription "$subscriptionId"
 Write-Host "az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path .\target\azure-sql-java-samples-1.war"
 az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path .\target\azure-sql-java-samples-1.war
