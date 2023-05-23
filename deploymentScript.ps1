@@ -7,6 +7,7 @@ $resourceGroup = $json.values.resourceGroup
 $deploymentName = $json.values.deploymentName
 $gitUserEmail = $json.values.gitUserEmail 
 $gitUserName = $json.values.gitUserName 
+$gitPassword = $json.values.gitPassword 
 $ADOgitURI = $json.values.ADOgitURI  
 
 mvn clean package
@@ -31,6 +32,8 @@ git commit -m "Initial commit"
 # are the git commands needed if we run the webapp deploy command?
 az login 
 az account set --subscription "$subscriptionId"
+Write-Host "az webapp deployment user set --user-name $gitUserName --password $gitPassword"
+az webapp deployment user set --user-name $gitUserName --password $gitPassword
 Write-Host "az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path .\target\azure-sql-java-samples-1.war"
 az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path .\target\azure-sql-java-samples-1.war
 #az webapp deploy --resource-group $resourceGroup --name $deploymentName --src-path C:\code\db-azure-sql-java\target\azure-sql-java-samples-1.war
