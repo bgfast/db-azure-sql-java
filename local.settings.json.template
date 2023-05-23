@@ -1,0 +1,13 @@
+{
+    "IsEncrypted" : false,
+    "Values":{
+        "resourceGroup": "App02-dev-EastUS",
+        "deploymentName" : "App02-dev-EastUS-ase",
+        "appserviceplan" : "ASEv3-dev-linux-plan",
+        "selectedSubscription" : "",
+        "location" : "eastus",
+        "gitUserEmail" : "",
+        "gitUserName" : "",
+        "ADOgitURI" : "https://.git"
+    }
+}
