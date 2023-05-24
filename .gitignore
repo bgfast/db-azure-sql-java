@@ -7,3 +7,6 @@ target
 target/azure-sql-java-samples-1/WEB-INF/*
 target/azure-sql-java-samples-1.war
 local.settings.json
+GitHub Copilot1.txt
+jmeter/summary.csv
+jmeter/aggregate.csv
